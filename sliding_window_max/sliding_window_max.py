@@ -2,10 +2,19 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
+import sys
+INT_MIN = -sys.maxsize -1
 def sliding_window_max(nums, k):
-    # Your code here
+    n = len(nums)
+    if not n > k: 
+        print("Invalid") 
+        return -1
 
-    pass
+    swm = []
+    for i in range(0, len(nums)-k+1):
+        swm.append(max(nums[i:i+k]))
+
+    return swm 
 
 
 if __name__ == '__main__':
